@@ -1,0 +1,50 @@
+#pou{
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#face{
+    font-size: 40px;
+    transform: rotate(90deg);
+}
+
+.room{
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to bottom right, white, bisque);
+    border: 5px solid grey;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats{
+    width: 400px;
+    margin-top: 20px;
+}
+
+.stat{
+    margin-bottom: 10px;
+}
+
+.bar{
+    width: 100px;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+.progress{
+    height: 100%;
+    background-color: green;
+    width: 100%;
+    transition: width 0.3%;
+}
