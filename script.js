@@ -62,7 +62,7 @@ function doAction(action) {
     stats.cleanness += 6;
     stats.happiness += 2;
     stats.energy -= 2;
-    showMessage("Your cat licked herself a little cleaner.");
+    showMessage("Your cat licked herself");
   }
 
   stats.health = keepNumberBetweenZeroAndOneHundred(stats.health);

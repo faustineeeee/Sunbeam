@@ -47,37 +47,6 @@ h2 {
   font-size: 20px;
 }
 
-.question-row {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin: 0 auto;
-}
-
-.question-row input {
-  width: 270px;
-  height: 38px;
-  padding: 0 12px;
-  border: 2px solid #334e68;
-  border-radius: 7px;
-  color: #222;
-}
-
-.question-row button {
-  min-width: 120px;
-  height: 38px;
-  padding: 0 18px;
-  border: 1px solid #947414;
-  border-radius: 7px;
-  background: #b28b13;
-  color: white;
-  font-weight: bold;
-}
-
-.question-row button:hover,
-.action-button:hover {
-  background: #96740c;
-}
 
 .message {
   min-height: 24px;
@@ -187,10 +156,9 @@ h2 {
 .reset-button {
   min-height: 38px;
   padding: 8px 14px;
-  border: 1px solid #947414;
   border-radius: 7px;
-  background: #b28b13;
-  color: white;
+  background: white;
+  color: black;
   font-weight: bold;
   font-size: 13px;
 }
@@ -199,10 +167,10 @@ h2 {
   margin-top: 18px;
   border-color: #999;
   background: white;
-  color: #444;
+  color: rgb(59, 58, 58);
 }
 
-.reset-button:hover {
+.action-button:hover, .reset-button:hover {
   background: #eeeeee;
 }
 
