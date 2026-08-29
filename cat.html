@@ -1,29 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purrfect Day!</title>
-    <link rel="stylesheet" href="style2.css">
-</head>
-<body>
-    <h1>Make your cat happy!</h1>
-    <div class="room">
-        <div class="pou"><img src="./assets/cat.png" alt="cat" id="cat"></div>
-    </div>
-    <div class="stats">
-        <div class="stat"><label>Hunger</label><div class="bar"><div class="progress" id="hunger-bar"></div></div></div>
-        <div class="stat"><label>Happiness</label><div class="bar"><div class="progress" id="happiness-bar"></div></div></div>
-        <div class="stat"><label>Health</label><div class="bar"><div class="progress" id="health-bar"></div></div></div>
-        <div class="stat"><label>Energy</label><div class="bar"><div class="progress" id="energy-bar"></div></div></div>
-        <div class="stat"><label>Cleanness</label><div class="bar"><div class="progress" id="cleanness"></div></div></div>
-    </div>
-    <div class="actions">
-        <button onclick="interactWithCat('feed')">Feed</button>
-        <button onclick="interactWithCat('clean')">Clean</button>
-        <button onclick="interactWithCat('play')">Play</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Cat</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <main class="cat-page">
+      <section class="cat-app">
+        <p id="message" class="message">Your cat is waiting for you.</p>
 
-    </div>
+        <div class="cat-picture">
+          <img id="cat-image" src="assets/cat.png" alt="Your orange cat" />
+          <img
+            id="food-image"
+            class="food-picture"
+            src="assets/food.png"
+            alt="Cat food"
+          />
+        </div>
+
+        <section class="stats-box">
+          <h2>Cat stats</h2>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-title">
+                <span>Health</span><strong id="health-number">90</strong>
+              </div>
+              <div class="stat-bar">
+                <div id="health-bar" class="stat-fill green"></div>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-title">
+                <span>Hunger</span><strong id="hunger-number">70</strong>
+              </div>
+              <div class="stat-bar">
+                <div id="hunger-bar" class="stat-fill orange"></div>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-title">
+                <span>Energy</span><strong id="energy-number">75</strong>
+              </div>
+              <div class="stat-bar">
+                <div id="energy-bar" class="stat-fill blue"></div>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-title">
+                <span>Happiness</span><strong id="happiness-number">80</strong>
+              </div>
+              <div class="stat-bar">
+                <div id="happiness-bar" class="stat-fill yellow"></div>
+              </div>
+            </div>
+
+            <div class="stat">
+              <div class="stat-title">
+                <span>Cleanness</span><strong id="cleanness-number">65</strong>
+              </div>
+              <div class="stat-bar">
+                <div id="cleanness-bar" class="stat-fill purple"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="actions-box">
+          <h2>Take care of your cat</h2>
+          <div class="actions">
+            <button class="action-button" onclick="doAction('bath')">
+              Bathe the cat
+            </button>
+            <button class="action-button" onclick="doAction('eat')">
+              Give the cat some food
+            </button>
+            <button class="action-button" onclick="doAction('play')">
+              Play with the cat
+            </button>
+            <button class="action-button" onclick="doAction('pet')">
+              Pet the cat
+            </button>
+            <button class="action-button" onclick="doAction('lick')">
+              Make the cat lick herself
+            </button>
+          </div>
+          <button class="reset-button" onclick="resetGame()">Reset cat</button>
+        </section>
+      </section>
+    </main>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

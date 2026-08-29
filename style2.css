@@ -1,50 +1,272 @@
-#pou{
-    width: 70%;
-    height: 70%;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+* {
+  box-sizing: border-box;
 }
 
-#face{
-    font-size: 40px;
-    transform: rotate(90deg);
+body {
+  margin: 0;
+  background: white;
+  color: #202020;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.room{
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(to bottom right, white, bisque);
-    border: 5px solid grey;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+button,
+input {
+  font: inherit;
 }
 
-.stats{
-    width: 400px;
-    margin-top: 20px;
+button {
+  cursor: pointer;
 }
 
-.stat{
-    margin-bottom: 10px;
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #c79a18;
+  outline-offset: 2px;
 }
 
-.bar{
-    width: 100px;
-    height: 20px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid grey;
+.cat-page {
+  min-height: 100vh;
+  padding: 110px 20px 40px;
 }
 
-.progress{
-    height: 100%;
-    background-color: green;
-    width: 100%;
-    transition: width 0.3%;
+.cat-app {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 55px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+
+.question-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.question-row input {
+  width: 270px;
+  height: 38px;
+  padding: 0 12px;
+  border: 2px solid #334e68;
+  border-radius: 7px;
+  color: #222;
+}
+
+.question-row button {
+  min-width: 120px;
+  height: 38px;
+  padding: 0 18px;
+  border: 1px solid #947414;
+  border-radius: 7px;
+  background: #b28b13;
+  color: white;
+  font-weight: bold;
+}
+
+.question-row button:hover,
+.action-button:hover {
+  background: #96740c;
+}
+
+.message {
+  min-height: 24px;
+  margin: 16px 0 4px;
+  color: #555;
+  font-size: 14px;
+}
+
+.cat-picture {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+}
+
+#cat-image {
+  width: 220px;
+  max-height: 270px;
+  object-fit: contain;
+  animation: cat-appear 0.35s ease-out;
+}
+
+.food-picture {
+  position: absolute;
+  right: 28%;
+  bottom: 45px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  animation: food-pop 0.4s ease-out;
+}
+
+.stats-box,
+.actions-box {
+  width: 100%;
+  margin: 22px auto 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  text-align: left;
+}
+
+.stat {
+  min-width: 0;
+}
+
+.stat-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.stat-title strong {
+  font-size: 12px;
+}
+
+.stat-bar {
+  height: 12px;
+  overflow: hidden;
+  border: 1px solid #a9a9a9;
+  border-radius: 10px;
+  background: #eeeeee;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.green {
+  background: #58a66e;
+}
+
+.orange {
+  background: #e38c3d;
+}
+
+.blue {
+  background: #5b8fbe;
+}
+
+.yellow {
+  background: #e4b532;
+}
+
+.purple {
+  background: #9b7db1;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-button,
+.reset-button {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid #947414;
+  border-radius: 7px;
+  background: #b28b13;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.reset-button {
+  margin-top: 18px;
+  border-color: #999;
+  background: white;
+  color: #444;
+}
+
+.reset-button:hover {
+  background: #eeeeee;
+}
+
+@keyframes cat-appear {
+  from {
+    opacity: 0.5;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes food-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .cat-page {
+    padding-top: 70px;
+  }
+
+  h1 {
+    margin-bottom: 35px;
+    font-size: 25px;
+  }
+
+  .question-row {
+    gap: 8px;
+  }
+
+  .question-row input {
+    width: calc(100% - 110px);
+  }
+
+  .question-row button {
+    min-width: 102px;
+    padding: 0 10px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 12px;
+  }
+
+  .cat-picture {
+    height: 240px;
+  }
+
+  #cat-image {
+    max-height: 235px;
+  }
+
+  .food-picture {
+    right: 17%;
+  }
 }
